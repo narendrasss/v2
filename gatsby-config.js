@@ -1,9 +1,30 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: 'Narendra Syahrasyad',
+    introText: `I'm Narendra, an apsiring software developer and business and computer science student @ UBC.`,
+    routes: [
+      {
+        name: 'work',
+        path: '/',
+      },
+      {
+        name: 'contact',
+        path: 'mailto:n.syahrasyad.n@gmail.com',
+      },
+      {
+        name: 'blog',
+        path: 'blog.narendras.io',
+      },
+    ],
+  },
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/src/projects/`,
+      },
+    },
+    `gatsby-transformer-remark`,
+  ],
 }
