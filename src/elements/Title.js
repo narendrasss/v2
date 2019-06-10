@@ -1,8 +1,12 @@
 import styled from 'styled-components'
 
 const Title = styled.h1`
-  color: ${({ theme }) => (theme ? theme.colors.black : `#292a2c`)};
-  font-size: 4.5em;
+  font-size: 2em;
+  line-height: 1.4;
+
+  @media (min-width: 768px) {
+    font-size: 4.5em;
+  }
 `
 
 export default Title

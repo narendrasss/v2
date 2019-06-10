@@ -3,5 +3,6 @@ module.exports = {
   rules: {
     'import/prefer-default-export': 0,
     'import/no-unresolved': 0,
+    'react/no-unescaped-entities': 0,
   },
 }

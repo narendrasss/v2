@@ -1,7 +1,6 @@
 module.exports = {
   siteMetadata: {
     title: 'Narendra Syahrasyad',
-    introText: `I'm Narendra, an apsiring software developer and business and computer science student @ UBC.`,
     routes: [
       {
         name: 'work',
