@@ -6,6 +6,11 @@ const Group = styled.section`
   > * {
     margin-bottom: 4em;
   }
+
+  @media (min-width: 1024px) {
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
 `
 
 export default Group

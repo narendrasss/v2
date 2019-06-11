@@ -13,18 +13,15 @@ function ProjectTemplate({ data }) {
   const { frontmatter, html } = data.markdownRemark
   const { title, tech, cover, color, role, github, link } = frontmatter
   return (
-    <Layout>
+    <ProjectLayout>
       <CoverImage color={color}>
         <Image src={`../../${cover}`} alt={title} />
       </CoverImage>
-      <article
-        css={`
-          padding: 0 1em;
-        `}
-      >
+      <Article>
         <header
           css={`
             margin-bottom: 3em;
+            width: 100%;
           `}
         >
           <Header>
@@ -41,11 +38,11 @@ function ProjectTemplate({ data }) {
                 margin-right: 0.5em;
               `}
             >
-              <Github size="1em" />
+              <Github size="1.5em" />
             </a>
             {link && (
               <a href={link}>
-                <LinkExternal size="1em" />
+                <LinkExternal size="1.5em" />
               </a>
             )}
           </Header>
@@ -71,8 +68,8 @@ function ProjectTemplate({ data }) {
           </Info>
         </header>
         <Content dangerouslySetInnerHTML={{ __html: html }} />
-      </article>
-    </Layout>
+      </Article>
+    </ProjectLayout>
   )
 }
 
@@ -95,28 +92,66 @@ export const query = graphql`
   }
 `
 
+const ProjectLayout = styled(Layout)`
+  padding: 0 3em;
+
+  @media (min-width: 656px) {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 35em 1fr;
+    > * {
+      grid-column: 2;
+    }
+  }
+`
+
+const Article = styled.article`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 const CoverImage = styled.figure`
   position: relative;
-  width: 100%;
-  margin: 0;
+  width: 100vw;
+  margin: 0 -3em;
   padding-top: 2em;
+  display: flex;
+  flex-direction: column;
 
   &:before {
     content: '';
     position: absolute;
     top: 0;
     background: ${({ color }) => `#${color}`};
-    width: 100vw;
-    margin: 0 -2em;
+    width: 100%;
     height: 30%;
     z-index: -1;
+  }
+
+  @media (min-width: 656px) {
+    margin: 0;
+    grid-column: 1 / -1;
+  }
+
+  @media (min-width: 850px) {
+    &:before {
+      width: 850px;
+      border-radius: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 `
 
 const Image = styled.img`
-  width: 100vw;
-  margin: 0 -2em;
+  width: 100%;
   object-fit: cover;
+
+  @media (min-width: 768px) {
+    width: 768px;
+    margin: 0 auto;
+  }
 `
 
 const Caption = styled.p`
@@ -134,6 +169,7 @@ const Info = styled.div`
 `
 
 const Header = styled.header`
+  width: 100%;
   display: flex;
   align-items: center;
   margin: 2em 0;
@@ -143,6 +179,7 @@ const Header = styled.header`
 `
 
 const Content = styled.div`
+  width: 100%;
   padding-bottom: 4em;
   > * {
     margin-bottom: 1em;

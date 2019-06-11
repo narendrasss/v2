@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize'
+import { getResponsiveSize } from '@utils'
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -21,6 +22,15 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     color: ${({ theme }) => theme.colors.black};
     line-height: 1.618;
+
+    @media (min-width: 1024px) {
+      font-size: ${getResponsiveSize({
+        startSize: 16,
+        endSize: 24,
+        startWidth: 1024,
+        endWidth: 1920,
+      })};
+    }
   }
 
   a {

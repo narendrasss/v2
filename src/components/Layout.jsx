@@ -8,18 +8,20 @@ import { useSiteMetadata } from '@utils'
 import Footer from '@elements/Footer'
 import Nav from './Nav'
 
-function Layout({ children }) {
+function Layout({ className, children }) {
   const { routes } = useSiteMetadata()
   return (
-    <Main>
-      <Nav
-        css={`
-          margin-top: 5em;
-          margin-bottom: 4em;
-        `}
-        routes={routes}
-      />
-      {children}
+    <>
+      <Main className={className}>
+        <Nav
+          css={`
+            margin-top: 5em;
+            margin-bottom: 4em;
+          `}
+          routes={routes}
+        />
+        {children}
+      </Main>
       <Footer>
         <Button href="mailto:n.syahrasyad.n@gmail.com">
           <Email
@@ -40,18 +42,41 @@ function Layout({ children }) {
           <a href="https://github.com/narendrasss/v2">Website source code</a>
         </Button>
       </Footer>
-    </Main>
+    </>
   )
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+}
+
+Layout.defaultProps = {
+  className: '',
 }
 
 export default Layout
 
 const Main = styled.main`
   padding: 0 2em;
+  min-height: 95vh;
+
+  @media (min-width: 524px) {
+    padding: 0 10vw;
+  }
+
+  @media (min-width: 758px) {
+    padding: 0 12vw;
+  }
+
+  @media (min-width: 1053px) {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 48em 1fr;
+    > * {
+      grid-column: 2;
+    }
+  }
 `
 
 const Button = styled.a`

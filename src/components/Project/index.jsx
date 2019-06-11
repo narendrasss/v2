@@ -10,7 +10,7 @@ import Heading from './Heading'
 
 function Project({ className, color, cover, description, path, title }) {
   return (
-    <Link className={className} to={path}>
+    <Wrapper className={className} to={path}>
       <ImageContainer
         css={`
           background-color: ${`#${color}`};
@@ -25,7 +25,7 @@ function Project({ className, color, cover, description, path, title }) {
         {` `}
         <RightArrowAlt size="1em" />
       </More>
-    </Link>
+    </Wrapper>
   )
 }
 
@@ -46,6 +46,12 @@ Project.Group = Group
 Project.Heading = Heading
 
 export default Project
+
+const Wrapper = styled(Link)`
+  @media (min-width: 1024px) {
+    width: 23em;
+  }
+`
 
 const ImageContainer = styled.figure`
   height: 400px;

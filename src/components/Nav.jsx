@@ -3,25 +3,23 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
-function Nav({ className, routes }) {
+function Nav({ className }) {
   return (
     <nav className={className}>
-      {routes.map(({ name, path }) => (
-        <NavLink key={`${name}--${path}`} to={path} activeClassName="active">
-          {name}
-        </NavLink>
-      ))}
+      <NavLink to="/" activeClassName="active">
+        work
+      </NavLink>
+      <NavLink to="/blog" activeClassName="active">
+        blog
+      </NavLink>
+      <NavLink as="a" href="mailto:n.syahrasyad.n@gmail.com">
+        contact
+      </NavLink>
     </nav>
   )
 }
 
 Nav.propTypes = {
-  routes: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-      path: PropTypes.string,
-    })
-  ).isRequired,
   className: PropTypes.string,
 }
 
