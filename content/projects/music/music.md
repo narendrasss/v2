@@ -4,12 +4,13 @@ title: Music
 tech: [React, Node.js, PostgreSQL]
 description: Simple music streaming and management.
 github: https://github.com/narendrasss/music
-client: CPSC 304
-color: dce5ea
-team: [Narendra S., Frederic A. Hayek, Parth G.]
+purpose: CPSC 304 final project
+color: d3adf7
+cover: ./music.png
+role: [Database design, Developed back-end REST API, Developed front-end interface]
 ---
 
-![music app cover](./assets/fig01.png)
+# Brief
 
 This project is a small web application that allows users to stream and manage music. It was built for the final assignment of CPSC 304 with a group of two other students.
 

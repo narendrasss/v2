@@ -8,13 +8,13 @@ export function useProjectsQuery() {
           node {
             id
             frontmatter {
-              client
               color
               cover
               description
               github
               path
-              team
+              purpose
+              role
               tech
               title
             }

@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-filename-extension */
-const React = require('react')
-const { ThemeProvider } = require('styled-components')
-const { GlobalStyle, theme } = require('./src/style')
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyle, theme } from './src/style'
 
 // eslint-disable-next-line react/prop-types
-exports.wrapRootElement = ({ element }) => {
+export const wrapRootElement = ({ element }) => {
   return (
     <ThemeProvider theme={theme}>
       <>

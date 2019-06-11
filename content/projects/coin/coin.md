@@ -1,11 +1,12 @@
 ---
 path: /projects/coin
 title: Coin
-tech: [React, Node.js]
+tech: [React, Redux]
 description: Web-based financial management.
 github: https://github.com/narendrasss/coin-v2
-client: Personal project
-color: f7e6d5
-team: [Narendra S.]
+link: https://narendras-coin.netlify.com
+purpose: Personal project
+color: b5f5ec
+role: [Architected app structure, Developed front-end interface using React]
 cover: ./coin.png
 ---

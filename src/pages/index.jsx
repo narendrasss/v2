@@ -1,17 +1,28 @@
 import React from 'react'
 
 import Layout from '@components/Layout'
+import Project from '@components/Project'
 import Title from '@elements/Title'
-import Subtitle from '@elements/Subtitle'
+import { useProjectsQuery } from '@utils'
 
 export default () => {
+  const projects = useProjectsQuery()
   return (
     <Layout>
-      <Title>
+      <Title
+        css={`
+          margin-bottom: 2em;
+        `}
+      >
         I'm Narendra, an aspiring software developer and business and computer
         science student @ UBC.
       </Title>
-      <Subtitle>Projects</Subtitle>
+      <Project.Group>
+        <Project.Heading>Projects</Project.Heading>
+        {projects.map(project => (
+          <Project key={project.id} {...project.frontmatter} />
+        ))}
+      </Project.Group>
     </Layout>
   )
 }

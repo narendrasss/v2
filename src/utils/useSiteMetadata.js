@@ -6,7 +6,6 @@ export function useSiteMetadata() {
       site {
         siteMetadata {
           title
-          introText
           routes {
             name
             path

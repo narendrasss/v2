@@ -4,7 +4,8 @@ title: Dictionary
 tech: [React Native, Typescript]
 description: Language translation and dictionary lookup mobile app.
 github: https://github.com/narendrasss/russ-vocab
-client: Personal project
-color: 59C6CA
-team: [Narendra S.]
+purpose: Personal project
+color: 1890ff
+cover: ./russ.png
+role: [Architected app structure, Developed front-end interface]
 ---

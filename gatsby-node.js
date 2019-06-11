@@ -11,3 +11,33 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     },
   })
 }
+
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
+  const template = path.resolve(`src/templates/ProjectTemplate.jsx`)
+
+  return graphql(`
+    {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              path
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors)
+    }
+    return result.data.allMarkdownRemark.edges.map(({ node }) =>
+      createPage({
+        path: node.frontmatter.path,
+        component: template,
+        context: {},
+      })
+    )
+  })
+}
