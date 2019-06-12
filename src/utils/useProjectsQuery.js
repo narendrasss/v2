@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 export function useProjectsQuery() {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
         edges {
           node {
             id
