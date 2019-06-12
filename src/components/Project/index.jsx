@@ -47,7 +47,22 @@ Project.Heading = Heading
 
 export default Project
 
+const More = styled(Link)`
+  color: ${({ theme }) => theme.colors.grays.dark};
+  font-size: 0.8em;
+  transition: all 0.2s ease-out;
+`
+
 const Wrapper = styled(Link)`
+  &:hover {
+    img {
+      transform: scale(1.05);
+    }
+
+    ${More} {
+      color: ${({ theme }) => theme.colors.blue};
+    }
+  }
   @media (min-width: 1024px) {
     width: 23em;
   }
@@ -65,6 +80,7 @@ const Image = styled.img`
   width: 100%;
   margin-left: 3em;
   margin-top: 3em;
+  transition: all 0.2s ease-out;
 
   &#Dictionary {
     object-fit: cover;
@@ -87,9 +103,4 @@ const Description = styled.p`
   color: ${({ theme }) => theme.colors.grays.dark};
   margin-top: 0;
   margin-bottom: 0.5em;
-`
-
-const More = styled(Link)`
-  color: ${({ theme }) => theme.colors.grays.dark};
-  font-size: 0.8em;
 `

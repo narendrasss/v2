@@ -4,7 +4,8 @@
     "paths": {
       "@components": ["src/components"],
       "@utils": ["src/utils"],
-      "@elements": ["src/elements"]
+      "@elements": ["src/elements"],
+      "@animations": ["src/animations"]
     }
   }
 }

@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     @media (min-width: 1024px) {
       font-size: ${getResponsiveSize({
         startSize: 16,
-        endSize: 24,
+        endSize: 20,
         startWidth: 1024,
         endWidth: 1920,
       })};

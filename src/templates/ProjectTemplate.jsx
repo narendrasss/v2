@@ -4,6 +4,7 @@ import { Github } from 'styled-icons/boxicons-logos'
 import { LinkExternal } from 'styled-icons/boxicons-regular'
 import { graphql } from 'gatsby'
 
+import { slideOut, fadeUp } from '@animations'
 import Layout from '@components/Layout'
 import Title from '@elements/Title'
 import Subtitle from '@elements/Subtitle'
@@ -109,6 +110,12 @@ const Article = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 0;
+  animation-name: ${fadeUp()};
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0.4s;
 `
 
 const CoverImage = styled.figure`
@@ -116,21 +123,30 @@ const CoverImage = styled.figure`
   width: 100vw;
   margin: 0 -3em;
   padding-top: 2em;
+  margin-bottom: -8em;
   display: flex;
   flex-direction: column;
 
   &:before {
     content: '';
-    position: absolute;
-    top: 0;
     background: ${({ color }) => `#${color}`};
     width: 100%;
+    min-height: 10em;
+    margin: 0 auto;
     height: 30%;
     z-index: -1;
+    transform-origin: center;
+    transform: scaleX(0);
+    animation-name: ${slideOut};
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
   }
 
   @media (min-width: 656px) {
-    margin: 0;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
     grid-column: 1 / -1;
   }
 
@@ -138,8 +154,6 @@ const CoverImage = styled.figure`
     &:before {
       width: 850px;
       border-radius: 4px;
-      left: 50%;
-      transform: translateX(-50%);
     }
   }
 `
@@ -147,6 +161,12 @@ const CoverImage = styled.figure`
 const Image = styled.img`
   width: 100%;
   object-fit: cover;
+  opacity: 0;
+  animation-name: ${fadeUp({ from: '0', to: '-8em' })};
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
 
   @media (min-width: 768px) {
     width: 768px;
@@ -164,6 +184,16 @@ const Info = styled.div`
   > * {
     &:first-child {
       margin-bottom: 1em;
+    }
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    > * {
+      &:first-child {
+        margin-bottom: 0;
+        margin-right: 2.5em;
+      }
     }
   }
 `
