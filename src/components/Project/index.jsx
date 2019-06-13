@@ -132,7 +132,7 @@ const Title = styled(Subtitle).attrs({ as: 'h1' })`
   margin-bottom: 0;
 `
 
-const Description = styled.p`
+const Description = styled.div`
   color: ${({ theme }) => theme.colors.grays.dark};
   margin-bottom: 1.5em;
   margin-top: 0;
