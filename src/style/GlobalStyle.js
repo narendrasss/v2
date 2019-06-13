@@ -5,6 +5,8 @@ import { getResponsiveSize } from '@utils'
 const GlobalStyle = createGlobalStyle`
   ${normalize}
 
+  @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
+
   * {
     box-sizing: border-box;
     padding: 0;

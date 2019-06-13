@@ -19,9 +19,10 @@ export default () => {
       </Title>
       <Project.Group>
         <Project.Heading>Projects</Project.Heading>
-        {projects.map(project => (
-          <Project key={project.id} {...project.frontmatter} />
-        ))}
+        {projects.map(project => {
+          const { frontmatter, html, id } = project
+          return <Project key={id} html={html} {...frontmatter} />
+        })}
       </Project.Group>
     </Layout>
   )
