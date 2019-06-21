@@ -3,7 +3,7 @@ import { getResponsiveSize } from '@utils'
 
 const Title = styled.h1`
   font-size: 2em;
-  line-height: 1.4;
+  line-height: 1.3;
 
   @media (min-width: 414px) {
     font-size: ${getResponsiveSize({

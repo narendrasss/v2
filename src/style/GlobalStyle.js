@@ -7,6 +7,8 @@ const GlobalStyle = createGlobalStyle`
 
   @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
 
+  @import url('https://rsms.me/inter/inter.css');
+
   * {
     box-sizing: border-box;
     padding: 0;
@@ -19,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-size: inherit;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: ${({ theme }) => theme.colors.black};
@@ -32,6 +34,10 @@ const GlobalStyle = createGlobalStyle`
         startWidth: 1024,
         endWidth: 1920,
       })};
+    }
+
+    @supports (font-variation-settings: normal) {
+      font-family: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
   }
 
