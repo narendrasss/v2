@@ -4,9 +4,12 @@ import { LeftArrowAlt } from 'styled-icons/boxicons-regular'
 import { Link } from 'gatsby'
 
 import Layout from '@components/Layout'
+import Post from '@components/Post'
 import Title from '@elements/Title'
+import { useBlogPosts } from '@utils'
 
 export default () => {
+  const posts = useBlogPosts()
   return (
     <BlogLayout>
       <Title
@@ -16,14 +19,22 @@ export default () => {
       >
         Blog
       </Title>
-      <Empty>
-        Oops, looks like I haven't wrote anything yet. Check back later!
-      </Empty>
-      <StyledLink to="/">
-        <LeftArrowAlt size="1.5em" />
-        {` `}
-        Go back home
-      </StyledLink>
+      {posts.length ? (
+        <div>
+          {posts.map(node => (
+            <Post
+              key={node.id}
+              slug={node.fields.slug}
+              timeToRead={node.timeToRead}
+              {...node.frontmatter}
+            />
+          ))}
+        </div>
+      ) : (
+        <Empty>
+          Oops, looks like I haven't wrote anything yet. Check back later!
+        </Empty>
+      )}
     </BlogLayout>
   )
 }

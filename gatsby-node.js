@@ -1,4 +1,5 @@
 const path = require('path')
+const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -10,5 +11,43 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         '@animations': path.resolve(__dirname, 'src/animations'),
       },
     },
+  })
+}
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode })
+    createNodeField({
+      node,
+      name: 'slug',
+      value: slug,
+    })
+  }
+}
+
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
+  return graphql(`
+    {
+      allMarkdownRemark(filter: { fields: { slug: { regex: "/posts/" } } }) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      const { slug } = node.fields
+      createPage({
+        path: slug,
+        component: path.resolve(`./src/templates/BlogPost.jsx`),
+        context: { slug },
+      })
+    })
   })
 }

@@ -20,8 +20,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `projects`,
-        path: `${__dirname}/content/projects/`,
+        name: `content`,
+        path: `${__dirname}/content/`,
       },
     },
     `gatsby-plugin-styled-components`,
@@ -30,6 +30,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-prismjs`,
           {
             resolve: `gatsby-remark-images`,
             options: {

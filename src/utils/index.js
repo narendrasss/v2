@@ -1,5 +1,6 @@
 export { useProjectsQuery } from './useProjectsQuery'
 export { useSiteMetadata } from './useSiteMetadata'
+export { useBlogPosts } from './useBlogPosts'
 
 export function getResponsiveSize({
   startSize,

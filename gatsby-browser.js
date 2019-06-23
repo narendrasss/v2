@@ -2,6 +2,7 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle, theme } from './src/style'
+import './src/style/prism.css'
 
 // eslint-disable-next-line react/prop-types
 export const wrapPageElement = ({ element }) => {
