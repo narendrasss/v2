@@ -64,6 +64,10 @@ Project.propTypes = {
   cover: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  html: PropTypes.string.isRequired,
+  github: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  tech: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 Project.defaultProps = {
