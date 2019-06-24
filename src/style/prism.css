@@ -6,7 +6,7 @@
 code[class*='language-'],
 pre[class*='language-'] {
   color: #292a2c;
-  font-family: 'Menlo', 'Bitstream Vera Sans Mono', 'Courier New', Courier,
+  font-family: source-code-pro, Menlo, Consolas, 'Courier New', Courier,
     monospace;
   font-size: 0.95em;
   direction: ltr;

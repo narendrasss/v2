@@ -33,7 +33,7 @@ export const query = graphql`
 `
 
 const Post = styled(Layout)`
-  grid-template-columns: 1fr 42em 1fr;
+  grid-template-columns: 1fr 40em 1fr;
   grid-auto-rows: min-content;
 `
 
