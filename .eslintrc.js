@@ -6,4 +6,8 @@ module.exports = {
     'react/no-unescaped-entities': 0,
     'react/no-danger': 0,
   },
+  env: {
+    browser: true,
+    node: true,
+  },
 }

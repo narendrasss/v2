@@ -5,8 +5,10 @@ import { graphql } from 'gatsby'
 import Layout from '@components/Layout'
 import Title from '@elements/Title'
 
+// eslint-disable-next-line react/prop-types
 export default ({ data }) => {
   const post = data.markdownRemark
+  document.title = post.frontmatter.title
   return (
     <Post>
       <Title

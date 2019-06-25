@@ -30,7 +30,12 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
     {
-      allMarkdownRemark(filter: { fields: { slug: { regex: "/posts/" } } }) {
+      allMarkdownRemark(
+        filter: {
+          fields: { slug: { regex: "/posts/" } }
+          frontmatter: { private: { eq: false } }
+        }
+      ) {
         edges {
           node {
             fields {

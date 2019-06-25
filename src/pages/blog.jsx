@@ -9,6 +9,7 @@ import Title from '@elements/Title'
 import { useBlogPosts } from '@utils'
 
 export default () => {
+  document.title = `@narendras/blog`
   const posts = useBlogPosts()
   return (
     <BlogLayout>

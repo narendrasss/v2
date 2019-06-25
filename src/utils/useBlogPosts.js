@@ -4,7 +4,10 @@ export function useBlogPosts() {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/posts/" } }
+        filter: {
+          fields: { slug: { regex: "/posts/" } }
+          frontmatter: { private: { eq: false } }
+        }
         sort: { order: DESC, fields: frontmatter___date }
       ) {
         edges {
