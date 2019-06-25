@@ -34,6 +34,7 @@ const NavLink = styled(Link)`
   font-weight: 600;
   text-decoration: none;
   color: inherit;
+  transition: all 0.2s ease-out;
 
   &.active,
   &:hover {
