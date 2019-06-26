@@ -18,7 +18,6 @@ const animate = css`
 `
 
 export default () => {
-  document.title = `@narendras`
   const projects = useProjectsQuery()
   return (
     <Layout>

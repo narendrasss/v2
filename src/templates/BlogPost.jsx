@@ -8,9 +8,8 @@ import Title from '@elements/Title'
 // eslint-disable-next-line react/prop-types
 export default ({ data }) => {
   const post = data.markdownRemark
-  document.title = post.frontmatter.title
   return (
-    <Post>
+    <Post title={post.frontmatter.title}>
       <Title
         css={`
           margin-bottom: 2em;

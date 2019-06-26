@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { Email } from 'styled-icons/material'
@@ -8,10 +9,13 @@ import { useSiteMetadata } from '@utils'
 import Footer from '@elements/Footer'
 import Nav from './Nav'
 
-function Layout({ className, children }) {
+function Layout({ className, children, title }) {
   const { routes } = useSiteMetadata()
   return (
     <>
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
       <Main className={className}>
         <Nav
           css={`
@@ -49,10 +53,12 @@ function Layout({ className, children }) {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  title: PropTypes.string,
 }
 
 Layout.defaultProps = {
   className: '',
+  title: '@narendras',
 }
 
 export default Layout

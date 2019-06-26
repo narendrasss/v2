@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { LeftArrowAlt } from 'styled-icons/boxicons-regular'
 import { Link } from 'gatsby'
 
 import Layout from '@components/Layout'
@@ -9,10 +8,9 @@ import Title from '@elements/Title'
 import { useBlogPosts } from '@utils'
 
 export default () => {
-  document.title = `@narendras/blog`
   const posts = useBlogPosts()
   return (
-    <BlogLayout>
+    <BlogLayout title="@narendras/blog">
       <Title
         css={`
           margin-bottom: 2em;
