@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
 
 import Layout from '@components/Layout'
 import Post from '@components/Post'
@@ -19,7 +18,7 @@ export default () => {
         Blog
       </Title>
       {posts.length ? (
-        <div>
+        <Post.Group>
           {posts.map(node => (
             <Post
               key={node.id}
@@ -28,7 +27,7 @@ export default () => {
               {...node.frontmatter}
             />
           ))}
-        </div>
+        </Post.Group>
       ) : (
         <Empty>
           Oops, looks like I haven't wrote anything yet. Check back later!
@@ -40,17 +39,10 @@ export default () => {
 
 const BlogLayout = styled(Layout)`
   grid-auto-rows: min-content;
+  padding-bottom: 12em;
 `
 
 const Empty = styled.p`
   color: ${({ theme }) => theme.colors.grays.dark};
   margin-bottom: 1em;
-`
-
-const StyledLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  &:hover {
-    color: ${({ theme }) => theme.colors.blue};
-  }
 `

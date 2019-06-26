@@ -1,8 +1,9 @@
 ---
-title: Object Literal vs. Switch Statements
-tagline: A different way of writing switch statements.
 date: 2019-06-23
 private: false
+tagline: A different way of writing switch statements.
+title: Object Literals vs. Switches
+topic: Javascript
 ---
 
 A **switch** statement gives us an easy way to do different things depending on the value of something:

@@ -1,8 +1,9 @@
 ---
-title: Algorithms - Frequency Query
-tagline: Solving a HackerRank hash table problem.
 date: 2019-06-24
-private: true
+private: false
+tagline: Solving a HackerRank hash table problem.
+title: "Algorithms: Frequency Query"
+topic: Algorithms
 ---
 
 This post is the first in a series of posts where I aim to describe my thinking process behind solving different algorithmic problems found on sites like LeetCode and HackerRank.

@@ -17,12 +17,12 @@ export function useBlogPosts() {
               date
               title
               tagline
+              topic
             }
             fields {
               slug
             }
             html
-            timeToRead
           }
         }
       }
