@@ -9,9 +9,9 @@ function Nav({ className }) {
       <NavLink to="/" activeClassName="active">
         work
       </NavLink>
-      <NavLink to="/blog" activeClassName="active">
+      {/* <NavLink to="/blog" activeClassName="active">
         blog
-      </NavLink>
+      </NavLink> */}
       <NavLink as="a" href="mailto:n.syahrasyad.n@gmail.com">
         contact
       </NavLink>

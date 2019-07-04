@@ -10,7 +10,6 @@ import Footer from '@elements/Footer'
 import Nav from './Nav'
 
 function Layout({ className, children, title }) {
-  const { routes } = useSiteMetadata()
   return (
     <>
       <Helmet>
@@ -22,7 +21,6 @@ function Layout({ className, children, title }) {
             margin-top: 5em;
             margin-bottom: 4em;
           `}
-          routes={routes}
         />
         {children}
       </Main>
