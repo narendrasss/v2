@@ -2,12 +2,12 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { Email } from 'styled-icons/material'
+import Nav from './Nav'
+/* import { Email } from 'styled-icons/material'
 import { Github } from 'styled-icons/boxicons-logos'
 
 import { useSiteMetadata } from '@utils'
-import Footer from '@elements/Footer'
-import Nav from './Nav'
+import Footer from '@elements/Footer' */
 
 function Layout({ className, children, title }) {
   return (
@@ -24,7 +24,7 @@ function Layout({ className, children, title }) {
         />
         {children}
       </Main>
-      <Footer>
+      {/* <Footer>
         <Button href="mailto:n.syahrasyad.n@gmail.com">
           <Email
             size="1.5em"
@@ -43,7 +43,7 @@ function Layout({ className, children, title }) {
           />
           <a href="https://github.com/narendrasss/v2">Website source code</a>
         </Button>
-      </Footer>
+      </Footer> */}
     </>
   )
 }
@@ -83,9 +83,9 @@ const Main = styled.main`
   }
 `
 
-const Button = styled.a`
+/* const Button = styled.a`
   outline: none;
   color: inherit;
   display: flex;
   align-items: center;
-`
+` */
