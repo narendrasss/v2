@@ -20,6 +20,7 @@ function Layout({ className, children, title }) {
           css={`
             margin-top: 5em;
             margin-bottom: 4em;
+            grid-column: 2 / -2;
           `}
         />
         {children}
@@ -63,20 +64,25 @@ export default Layout
 
 const Main = styled.main`
   padding: 0 2em;
+  padding-bottom: 10vh;
   min-height: 95vh;
+  max-width: 100vw;
 
   @media (min-width: 524px) {
-    padding: 0 10vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
   }
 
   @media (min-width: 758px) {
-    padding: 0 12vw;
+    padding-left: 12vw;
+    padding-right: 12vw;
   }
 
   @media (min-width: 1053px) {
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
     display: grid;
-    grid-template-columns: 1fr 48em 1fr;
+    grid-template-columns: 15vw 1fr 15vw;
     > * {
       grid-column: 2;
     }

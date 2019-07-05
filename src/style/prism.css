@@ -46,6 +46,7 @@ pre[class*='language-'] {
   margin: 2em 0;
   background: #fafafa;
   overflow-x: auto;
+  border-radius: 8px;
 }
 
 /* Inline code */

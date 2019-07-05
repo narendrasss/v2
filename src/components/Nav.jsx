@@ -6,9 +6,8 @@ import PropTypes from 'prop-types'
 function Nav({ className }) {
   return (
     <nav className={className}>
-      <NavLink to="/" activeClassName="active">
-        work
-      </NavLink>
+      <NavLink to="/">work</NavLink>
+      <NavLink to="/algorithms">algorithms</NavLink>
       {/* <NavLink to="/blog" activeClassName="active">
         blog
       </NavLink> */}
@@ -29,7 +28,7 @@ Nav.defaultProps = {
 
 export default Nav
 
-const NavLink = styled(Link)`
+const NavLink = styled(Link).attrs({ activeClassName: 'active' })`
   margin-right: 1.5em;
   font-weight: 600;
   text-decoration: none;

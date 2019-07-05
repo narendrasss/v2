@@ -30,7 +30,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
     {
-      allMarkdownRemark(
+      posts: allMarkdownRemark(
         filter: {
           fields: { slug: { regex: "/posts/" } }
           frontmatter: { private: { eq: false } }
@@ -44,13 +44,33 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+      algs: allMarkdownRemark(
+        filter: { fields: { slug: { regex: "//algorithms//" } } }
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+          }
+        }
+      }
     }
   `).then(result => {
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    result.data.posts.edges.forEach(({ node }) => {
       const { slug } = node.fields
       createPage({
         path: slug,
         component: path.resolve(`./src/templates/BlogPost.jsx`),
+        context: { slug },
+      })
+    })
+
+    result.data.algs.edges.forEach(({ node }) => {
+      const { slug } = node.fields
+      createPage({
+        path: slug,
+        component: path.resolve(`./src/templates/Algorithm.jsx`),
         context: { slug },
       })
     })
