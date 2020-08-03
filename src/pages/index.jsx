@@ -22,8 +22,18 @@ export default () => {
   return (
     <Layout>
       <AnimatedTitle order={1}>
-        I'm Narendra, an aspiring software developer and business and computer
-        science student @ UBC.
+        Hey, I'm Nanda! I'm a senior developer @
+        {' '}
+        <a href="https://tapestry-tool.com/" target="_blank" rel="noreferrer">
+          Tapestry
+        </a>
+        {' '}
+        and 5th year Business & CS @
+        {' '}
+        <a href="https://www.ubc.ca/" target="_blank" rel="noreferrer">
+          UBC
+        </a>
+        .
       </AnimatedTitle>
       <Project.Group>
         <AnimatedHeading order={3}>Projects</AnimatedHeading>
@@ -46,6 +56,14 @@ export default () => {
 const AnimatedTitle = styled(Title)`
   ${animate}
   margin-bottom: 2em;
+
+  > a {
+    text-decoration: underline;
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.blue};
+    }
+  }
 `
 
 const AnimatedHeading = styled(Project.Heading)`

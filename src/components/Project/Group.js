@@ -6,7 +6,6 @@ const Group = styled.section`
   }
 
   @media (min-width: 1053px) {
-    width: 48em;
     margin: 0 auto;
   }
 `

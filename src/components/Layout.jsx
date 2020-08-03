@@ -3,11 +3,6 @@ import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import Nav from './Nav'
-/* import { Email } from 'styled-icons/material'
-import { Github } from 'styled-icons/boxicons-logos'
-
-import { useSiteMetadata } from '@utils'
-import Footer from '@elements/Footer' */
 
 function Layout({ className, children, title }) {
   return (
@@ -25,26 +20,6 @@ function Layout({ className, children, title }) {
         />
         {children}
       </Main>
-      {/* <Footer>
-        <Button href="mailto:n.syahrasyad.n@gmail.com">
-          <Email
-            size="1.5em"
-            css={`
-              margin-right: 1em;
-            `}
-          />
-          <p>n.syahrasyad.n@gmail.com</p>
-        </Button>
-        <Button href="https://github.com/narendrasss/v2">
-          <Github
-            size="1.5em"
-            css={`
-              margin-right: 1em;
-            `}
-          />
-          <a href="https://github.com/narendrasss/v2">Website source code</a>
-        </Button>
-      </Footer> */}
     </>
   )
 }
@@ -82,16 +57,10 @@ const Main = styled.main`
     padding-left: 0;
     padding-right: 0;
     display: grid;
-    grid-template-columns: 15vw 1fr 15vw;
+    grid-template-columns: repeat(12, 1fr);
+    
     > * {
-      grid-column: 2;
+      grid-column: 3 / -3;
     }
   }
 `
-
-/* const Button = styled.a`
-  outline: none;
-  color: inherit;
-  display: flex;
-  align-items: center;
-` */
