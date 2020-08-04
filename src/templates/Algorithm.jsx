@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
-import AlgLayout from '@components/AlgLayout'
+import Layout from '@components/Layout'
+import "katex/dist/katex.min.css"
 
 // eslint-disable-next-line react/prop-types
 export default ({ data }) => {
   const metadata = data.markdownRemark
   return (
-    <AlgLayout>
-      <h1>{metadata.frontmatter.title}</h1>
+    <Layout>
       <Article dangerouslySetInnerHTML={{ __html: metadata.html }} />
-    </AlgLayout>
+    </Layout>
   )
 }
 
@@ -26,7 +26,10 @@ export const query = graphql`
 `
 
 const Article = styled.article`
-  font-size: 16px;
+  font-size: 1em;
+  max-width: 42em;
+  margin: 0 auto;
+  
   > * {
     margin-bottom: 1em;
   }

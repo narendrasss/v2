@@ -3,12 +3,17 @@
  * VS theme by Andrew Lock (https://andrewlock.net)
  */
 
+code {
+  font-family: SF Mono, Menlo, Consolas, 'Courier New', Courier,
+    monospace;
+}
+
 code[class*='language-'],
 pre[class*='language-'] {
   color: #292a2c;
-  font-family: source-code-pro, Menlo, Consolas, 'Courier New', Courier,
+  font-family: SF Mono, Menlo, Consolas, 'Courier New', Courier,
     monospace;
-  font-size: 0.95em;
+  font-size: 0.9em;
   direction: ltr;
   text-align: left;
   white-space: pre;

@@ -7,13 +7,7 @@ function Nav({ className }) {
   return (
     <nav className={className}>
       <NavLink to="/">work</NavLink>
-      <NavLink to="/algorithms">algorithms</NavLink>
-      {/* <NavLink to="/blog" activeClassName="active">
-        blog
-      </NavLink> */}
-      <NavLink as="a" href="mailto:n.syahrasyad.n@gmail.com">
-        contact
-      </NavLink>
+      <NavLink to="/writing">writing</NavLink>
     </nav>
   )
 }

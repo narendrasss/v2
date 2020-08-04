@@ -38,6 +38,7 @@ module.exports = {
               wrapperStyle: `margin: 2em -3em;`,
             },
           },
+          `gatsby-remark-katex`,
         ],
       },
     },
