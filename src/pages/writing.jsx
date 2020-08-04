@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import DifficultyTab from '@components/DifficultyTab'
 import Layout from '@components/Layout'
 import BaseTitle from '@elements/Title'
 import { useAlgorithmsQuery } from '@utils'
@@ -23,7 +24,7 @@ export default () => {
           {problems.map(({ id, frontmatter }) => {
             const number = String(frontmatter.number).padStart(3, '0')
             return (
-              <Problem>
+              <Problem key={number}>
                 <ProblemLink key={id} to={`/algorithms/${number}`}>
                   <ProblemNumber>
                     #
@@ -31,6 +32,7 @@ export default () => {
                   </ProblemNumber>
                   {` `}
                   {frontmatter.title}
+                  <Tab difficulty={frontmatter.difficulty} as="span" />
                 </ProblemLink>
               </Problem>
             )
@@ -40,6 +42,10 @@ export default () => {
     </Layout>
   )
 }
+
+const Tab = styled(DifficultyTab)`
+  margin-left: auto;
+`
 
 const Content = styled.section`
   grid-column: 3 / span 3;

@@ -13,9 +13,7 @@ export function useAlgorithmsQuery() {
             frontmatter {
               number
               title
-              bigo
-              runtime
-              memory
+              difficulty
             }
             fields {
               slug
