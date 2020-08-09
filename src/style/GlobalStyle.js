@@ -5,7 +5,7 @@ import { getResponsiveSize } from '@utils'
 const GlobalStyle = createGlobalStyle`
   ${normalize}
 
-  @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap');
 
   @import url('https://rsms.me/inter/inter.css');
 
@@ -35,15 +35,15 @@ const GlobalStyle = createGlobalStyle`
         endWidth: 1920,
       })};
     }
-
-    @supports (font-variation-settings: normal) {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
   }
 
   a {
     text-decoration: none;
     color: inherit;
+  }
+
+  ul, ol {
+    list-style: inside;
   }
 `
 

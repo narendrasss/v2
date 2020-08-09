@@ -4,15 +4,13 @@
  */
 
 code {
-  font-family: SF Mono, Menlo, Consolas, 'Courier New', Courier,
-    monospace;
+  font-family: Menlo, Consolas, 'Courier New', Courier, monospace;
 }
 
 code[class*='language-'],
 pre[class*='language-'] {
   color: #292a2c;
-  font-family: SF Mono, Menlo, Consolas, 'Courier New', Courier,
-    monospace;
+  font-family: Menlo, Consolas, 'Courier New', Courier, monospace;
   font-size: 0.9em;
   direction: ltr;
   text-align: left;
@@ -48,7 +46,6 @@ code[class*='language-'] ::selection {
 /* Code blocks */
 pre[class*='language-'] {
   padding: 1.5em 2em;
-  margin: 2em 0;
   background: #fafafa;
   overflow-x: auto;
   border-radius: 8px;

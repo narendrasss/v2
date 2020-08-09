@@ -14,36 +14,33 @@ const animate = css`
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
-  animation-delay: ${({ order }) => `${order / 10}s`};
+  animation-delay: ${({ delay }) => `${delay / 10}s`};
 `
 
 export default () => {
   const projects = useProjectsQuery()
   return (
     <Layout>
-      <AnimatedTitle order={1}>
-        Hey, I'm Nanda! I'm a senior developer @
-        {' '}
+      <AnimatedTitle delay={1}>
+        Hey, I'm Nanda! I'm a senior developer @{' '}
         <a href="https://tapestry-tool.com/" target="_blank" rel="noreferrer">
           Tapestry
-        </a>
-        {' '}
-        and 5th year Business & CS @
-        {' '}
+        </a>{' '}
+        and 5th year Business & CS @{' '}
         <a href="https://www.ubc.ca/" target="_blank" rel="noreferrer">
           UBC
         </a>
         .
       </AnimatedTitle>
+      <AnimatedHeading delay={3}>Projects</AnimatedHeading>
       <Project.Group>
-        <AnimatedHeading order={3}>Projects</AnimatedHeading>
         {projects.map((project, index) => {
           const { frontmatter, html, id } = project
           return (
             <AnimatedProject
               key={id}
               html={html}
-              order={5 + index}
+              delay={5 + index}
               {...frontmatter}
             />
           )

@@ -46,7 +46,11 @@ const Article = styled.article`
   max-width: 42em;
   
   > * {
-    margin-bottom: 1em;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    margin-top: 1em;
   }
 `
 
@@ -55,5 +59,5 @@ const Title = styled.h1`
 `
 
 const Header = styled.header`
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 `

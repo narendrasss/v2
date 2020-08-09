@@ -28,7 +28,7 @@ function Project({
       >
         <Image src={`./thumbnails/${cover}`} alt={title} id={title} />
       </ImageContainer>
-      <Info>
+      {/* <Info>
         <Title>{title}</Title>
         <Tech>{tech.sort().join(' / ')}</Tech>
         <Description dangerouslySetInnerHTML={{ __html: html }} />
@@ -53,7 +53,7 @@ function Project({
             </Icon>
           )}
         </div>
-      </Info>
+      </Info> */}
     </Wrapper>
   )
 }
@@ -90,37 +90,29 @@ const Wrapper = styled.div`
 
   @media (min-width: 1024px) {
     flex-direction: row;
+    min-width: 0;
   }
 `
 
 const ImageContainer = styled.figure`
   height: 400px;
   min-width: 100%;
-  margin-right: 2em;
   border-radius: 0.5rem;
   overflow: hidden;
-
-  @media (min-width: 1024px) {
-    min-width: 23em;
-    max-width: 23em;
-  }
 `
 
 const Image = styled.img`
-  width: 100%;
+  width: auto;
+  height: 400px;
   margin-left: 3em;
   margin-top: 3em;
   transition: all 0.2s ease-out;
+  border-radius: 8px;
 
   &#Dictionary {
-    object-fit: cover;
     margin-left: 0;
-    margin-top: 1em;
-  }
-
-  &#Music {
-    width: auto;
-    height: 400px;
+    width: 100%;
+    height: auto;
   }
 `
 
@@ -150,7 +142,7 @@ const Icon = styled.a`
     border-radius: 4px;
     color: white;
     content: attr(data-tooltip);
-    font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+    font-family: Menlo, Monaco, Consolas, 'Courier New', Courier, monospace;
     font-size: 0.8em;
     left: 0;
     padding: 0.5em 0.8em;

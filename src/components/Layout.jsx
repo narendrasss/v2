@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import Nav from './Nav'
+import BaseNav from './Nav'
 
 function Layout({ className, children, title }) {
   return (
@@ -15,7 +15,6 @@ function Layout({ className, children, title }) {
           css={`
             margin-top: 5em;
             margin-bottom: 4em;
-            grid-column: 2 / -2;
           `}
         />
         {children}
@@ -63,4 +62,8 @@ const Main = styled.main`
       grid-column: 3 / -3;
     }
   }
+`
+
+const Nav = styled(BaseNav)`
+  grid-row: 1;
 `
