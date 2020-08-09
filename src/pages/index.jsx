@@ -5,7 +5,7 @@ import { fadeUp } from '@animations'
 import Layout from '@components/Layout'
 import Project from '@components/Project'
 import Title from '@elements/Title'
-import { useProjectsQuery } from '@utils'
+import { useMetaContent, useProjectsQuery } from '@utils'
 
 const animate = css`
   opacity: 0;
@@ -18,20 +18,14 @@ const animate = css`
 `
 
 export default () => {
+  const { about } = useMetaContent()
   const projects = useProjectsQuery()
   return (
     <Layout>
-      <AnimatedTitle delay={1}>
-        Hey, I'm Nanda! I'm a senior developer @{' '}
-        <a href="https://tapestry-tool.com/" target="_blank" rel="noreferrer">
-          Tapestry
-        </a>{' '}
-        and 5th year Business & CS @{' '}
-        <a href="https://www.ubc.ca/" target="_blank" rel="noreferrer">
-          UBC
-        </a>
-        .
-      </AnimatedTitle>
+      <AnimatedTitle
+        delay={1}
+        dangerouslySetInnerHTML={{ __html: about.html }}
+      />
       <AnimatedHeading delay={3}>Projects</AnimatedHeading>
       <Project.Group>
         {projects.map((project, index) => {
@@ -54,7 +48,7 @@ const AnimatedTitle = styled(Title)`
   ${animate}
   margin-bottom: 2em;
 
-  > a {
+  a {
     text-decoration: underline;
 
     &:hover {

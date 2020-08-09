@@ -4,21 +4,14 @@ import { Link } from 'gatsby'
 import DifficultyTab from '@components/DifficultyTab'
 import BaseLayout from '@components/Layout'
 import BaseTitle from '@elements/Title'
-import { useAlgorithmsQuery } from '@utils'
+import { useAlgorithmsQuery, useMetaContent } from '@utils'
 
 export default () => {
   const problems = useAlgorithmsQuery()
+  const { leetcode } = useMetaContent()
   return (
     <Layout>
-      <Content>
-        <Title>LeetCode Journal</Title>
-        <p>
-          The LeetCode journal is a brain dump of thoughts that I use to
-          practice technical interviews. They are messy and unedited but are
-          nevertheless meant to emulate how I would explain it in a real
-          interview!
-        </p>
-      </Content>
+      <Content dangerouslySetInnerHTML={{ __html: leetcode.html }} />
       <ProblemList>
         <ul>
           {problems.map(({ id, frontmatter }) => {
@@ -26,10 +19,7 @@ export default () => {
             return (
               <Problem key={number}>
                 <ProblemLink key={id} to={`/algorithms/${number}`}>
-                  <ProblemNumber>
-                    #
-                    {number}
-                  </ProblemNumber>
+                  <ProblemNumber>#{number}</ProblemNumber>
                   {` `}
                   {frontmatter.title}
                   <Tab difficulty={frontmatter.difficulty} />

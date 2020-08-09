@@ -1,4 +1,5 @@
 export { useProjectsQuery } from './useProjectsQuery'
+export { useMetaContent } from './useMetaContent'
 export { useSiteMetadata } from './useSiteMetadata'
 export { useBlogPosts } from './useBlogPosts'
 export { useAlgorithmsQuery } from './useAlgorithmsQuery'
